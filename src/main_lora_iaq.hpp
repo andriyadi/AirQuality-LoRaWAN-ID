@@ -22,9 +22,9 @@ struct SGP30Baseline
 #define USER_LED_PIN                    PA8
 
 // OTAA credentials
-const char *devEui = "3ad6a56d88aafcfe";
-const char *appEui = "0000000000000001";
-const char *appKey = "bcc9494dadf453084d315a28f54c502e";
+const char *devEui = "<CHANGE_THIS>";
+const char *appEui = "<CHANGE_THIS>";
+const char *appKey = "<CHANGE_THIS>";
 
 // Pin-mapping for DycodeX LoRa board that's based on RAK811. Other RAK811-based board can use it
 const sRFM_pins RFM_pins = {
