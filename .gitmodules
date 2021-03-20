@@ -1,0 +1,3 @@
+[submodule "lib/Beelan-LoRaWAN"]
+	path = lib/Beelan-LoRaWAN
+	url = https://github.com/andriyadi/Beelan-LoRaWAN
