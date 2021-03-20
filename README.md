@@ -4,7 +4,7 @@ A simple demo to work with LoRaWAN that's compliant with Indonesia region. It re
 For this project, I need to fork and modify a LoRaWAN library and posted it here: [https://github.com/andriyadi/Beelan-LoRaWAN](https://github.com/andriyadi/Beelan-LoRaWAN). By that, the LoRaWAN regional parameters complies with Indonesia's LPWA tech spec regulation, and the device may be able to connect with LoRaWAN public network in Indonesia, e.g: [Antares](https://antares.id) platform and network server. The library is originally from [here](https://github.com/BeelanMX/Beelan-LoRaWAN). 
 
 ## Demo setup
-![Demo setup](https://github.com/andriyadi/AirQuality-LoRaWAN-ID/raw/main/assets/demo.jpeg)
+![Demo setup](https://github.com/andriyadi/AirQuality-LoRaWAN-ID/raw/main/assets/demo_setup.jpeg)
 
 ### Hardware
 If you want to replicate this project without any modification, you need following hardware:
@@ -19,6 +19,29 @@ If you want to replicate this project without any modification, you need followi
 ## LoRaWAN Network
 To publish data over LoRaWAN, obviously you need a LoRaWAN gateway. For this project, the gateway should be tuned to frequency plan for Indonesia.
 Or you can use public LoRaWAN network, such as Antares. Try to register and login, read their documentation.
+
+### Architecture
+![Demo architecture](https://github.com/andriyadi/AirQuality-LoRaWAN-ID/raw/main/assets/demo_arch.jpeg)
+To keep thing simple, and to easily work with Antares platform, I publish the data in string that only contain the value. Of course, you can and should use binary format, but there's no payload decoder in Antares for me to be able to display the data on a widget.
+
+Since we have two data to transmit (CO2 and TVOC), to differentiate them I make use of port in LoRaWAN. CO2 is transmitetd using port 2, while TVOC on port 3. You can see in the code at this section:
+```
+if (loraTxCounter % 2 == 0) {
+    // CO2
+    actLen = snprintf(txData, 8, "%d", lastCO2);
+    ...
+    lora.sendUplink(txData, strlen(txData), 0, 2); // using port 2
+    ...
+}
+else {
+    
+    // TVOC
+    actLen = snprintf(txData, 8, "%d", lastTVOC);
+    ...
+    lora.sendUplink(txData, strlen(txData), 0, 3); // using port 3
+    ...
+}
+```
 
 ## Run the Project
 In `src/main_lora_iaq.hpp`, adjust these constants according to your OTAA credentials:

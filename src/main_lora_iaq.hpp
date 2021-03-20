@@ -191,7 +191,7 @@ void loop()
             actLen = snprintf(txData, 8, "%d", lastCO2);
             txData[actLen] = 0;
             Serial.printf("Sending CO2: %s\r\n", txData);
-            lora.sendUplink(txData, strlen(txData), 0, 2);
+            lora.sendUplink(txData, strlen(txData), 0, 2); // using port 2
 
             loraTxCounter++;
             loraPort = lora.getFramePortTx();
@@ -205,7 +205,7 @@ void loop()
             actLen = snprintf(txData, 8, "%d", lastTVOC);
             txData[actLen] = 0;
             Serial.printf("Sending TVOC: %s\r\n", txData);
-            lora.sendUplink(txData, strlen(txData), 0, 3);
+            lora.sendUplink(txData, strlen(txData), 0, 3); // using port 3
 
             loraTxCounter++;
             loraPort = lora.getFramePortTx();
