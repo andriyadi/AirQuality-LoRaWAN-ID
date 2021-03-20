@@ -1,7 +1,7 @@
 # AirQuality-LoRaWAN-ID
 A simple demo to work with LoRaWAN that's compliant with Indonesia region. It reads air quality data (CO2 and TVOC) from SGP30 sensor, and transmit them over LoRaWAN.
 
-For this project, I need to fork and modify a LoRaWAN library and posted it here: [https://github.com/andriyadi/Beelan-LoRaWAN](https://github.com/andriyadi/Beelan-LoRaWAN). By that, the LoRaWAN regional parameters complies with Indonesia's LPWA tech spec regulation, and the device may be able to connect with LoRaWAN public network in Indonesia, e.g: [Antares](https://antares.id) platform and network server. The library is originally from [here](https://github.com/BeelanMX/Beelan-LoRaWAN). 
+For this project, I need to fork and modify a LoRaWAN library and posted it here: [https://github.com/andriyadi/Beelan-LoRaWAN](https://github.com/andriyadi/Beelan-LoRaWAN). By that, the LoRaWAN regional parameters complies with Indonesia's LPWA tech spec regulation, and the device may be able to connect with LoRaWAN public network in Indonesia, e.g: [Antares](https://antares.id) platform and network server. You can use my modified library not only for the MCU I use here (STM32L1), but for other Arduino compatible MCU and boards (other STM32 MCU supported by STM32Duino, ESP32, SAMR34, NRF52, etc). The library is originally from [here](https://github.com/BeelanMX/Beelan-LoRaWAN). 
 
 ## Demo setup
 ![Demo setup](https://github.com/andriyadi/AirQuality-LoRaWAN-ID/raw/main/assets/demo_setup.jpeg)
