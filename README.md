@@ -6,19 +6,22 @@ For this project, I need to fork and modify a LoRaWAN library and posted it here
 ## Demo setup
 ![Demo setup](https://github.com/andriyadi/AirQuality-LoRaWAN-ID/raw/main/assets/demo.jpeg)
 
+### Hardware
 If you want to replicate this project without any modification, you need following hardware:
 * DycodeX LoRa development board (contact me to get one). Or you can use any boards using RAK811 module but you may need to adjust some minor code.
 * SGP30 sensor module. I use the one from Seeed Studio
-* Optionally ST-Link for flashing the firmware and debugging. I set the Platform.IO configuration file to use ST-Link. If you want to use DFU or JLink uploader, adjust the config (.ini) file
+* Optionally ST-Link for flashing the firmware and debugging. I set the PlatformIO configuration file to use ST-Link. If you want to use DFU or JLink uploader, adjust the config (.ini) file
+
+### Software
+* This project is developed using PlatformIO tooling. Make sure to install it.
+* ST STM32 platform to work with STM32 MCU which powers the board. I use Arduino framework, which is based on STM32Duino project.
 
 ## LoRaWAN Network
 To publish data over LoRaWAN, obviously you need a LoRaWAN gateway. For this project, the gateway should be tuned to frequency plan for Indonesia.
 Or you can use public LoRaWAN network, such as Antares. Try to register and login, read their documentation.
 
 ## Run the Project
-This project is developed using Platform.IO tooling. Make sure to install it.
-
-Then in `src/main_lora_iaq.hpp`, adjust these constants according to your OTAA credentials:
+In `src/main_lora_iaq.hpp`, adjust these constants according to your OTAA credentials:
 ```
 // OTAA credentials
 const char *devEui = "<CHANGE_THIS>";
