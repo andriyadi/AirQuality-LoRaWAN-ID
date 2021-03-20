@@ -52,6 +52,13 @@ const char *appEui = "<CHANGE_THIS>";
 const char *appKey = "<CHANGE_THIS>";
 ```
 
+## Integration
+As for my demo, I use Antares LoRaWAN network server, the published data end up in Antares platform. I still can not do much in term of data visualization. For further processing and visualization, we can integrate Antares with other platform, such as Node-RED.
+
+Here's the capture of Node-RED flow to parse and process the data, the flow script is attached in `assets/node-red_flows`. I can use Node-RED dashboard pallete to visualize data, right from Node-RED. 
+![Integration with Node-RED](https://github.com/andriyadi/AirQuality-LoRaWAN-ID/raw/main/assets/node-red_integration.jpeg)
+
+
 ## Credits
 * [Beelan-LoRaWAN](https://github.com/BeelanMX/Beelan-LoRaWAN)
 * Antares sample code
